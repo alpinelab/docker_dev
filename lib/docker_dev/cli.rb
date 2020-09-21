@@ -1,5 +1,6 @@
 require 'optparse'
 require 'docker_dev/config_generator'
+require 'docker_dev/recipes'
 
 module DockerDev
   class CLI
@@ -43,8 +44,10 @@ module DockerDev
           exit
         end
 
-        o.on '--postgresql', 'use PostgreSQL' do
-          @config_generator.add :postgresql
+        DockerDev::Recipes.each do |recipe|
+          o.on '--%s' % recipe.id, recipe.description do
+            @config_generator.add_recipe recipe
+          end
         end
       end
     end
