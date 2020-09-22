@@ -9,7 +9,7 @@ module DockerDev
 
     class << self
       def run arguments
-        cli = new arguments, output: $stdout, output_error: $stderr
+        cli = new arguments, output: $stdout
         cli.parse_arguments
         cli.run
       rescue ArgumentError => e
@@ -18,10 +18,9 @@ module DockerDev
       end
     end
 
-    def initialize arguments, output:, output_error:
+    def initialize arguments, output:
       @arguments = arguments
       @output = output
-      @output_error = output_error
       @config_generator = ConfigGenerator.new
     end
 
