@@ -13,8 +13,8 @@ module DockerDev
       }
 
       class << self
-        def id
-          'webpacker'
+        def option
+          '--webpacker'
         end
 
         def description
@@ -22,7 +22,7 @@ module DockerDev
         end
       end
 
-      def initialize input
+      def initialize input, _
         @input = input.dup
       end
 

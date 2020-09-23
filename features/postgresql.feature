@@ -22,3 +22,26 @@ Feature: PostgreSQL service configuration
         postgres-data:
           driver: local
       """
+
+  Scenario: forces specific "image" and "tag"
+    When I successfully run `docker_dev --postgresql 12-alpine`
+    Then the output must match YAML:
+      """
+      version: '3'
+      services:
+        app:
+          image: alpinelab/ruby-dev
+          ports:
+            - 5000:5000
+          volumes:
+            - .:/app
+        postgres:
+          image: postgres:12-alpine
+          volumes:
+            - postgres-data:/var/lib/postgresql/data
+          environment:
+            POSTGRES_PASSWORD: password
+      volumes:
+        postgres-data:
+          driver: local
+      """

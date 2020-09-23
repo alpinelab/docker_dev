@@ -19,8 +19,8 @@ module DockerDev
       }
 
       class << self
-        def id
-          'postgresql'
+        def option
+          '--postgresql [image tag]'
         end
 
         def description
@@ -28,12 +28,17 @@ module DockerDev
         end
       end
 
-      def initialize input
+      def initialize input, image = nil
         @input = input
+        @image = image
       end
 
       def apply
-        deep_merge @input, CONFIG
+        out = deep_merge @input, CONFIG
+        if @image
+          out['services']['postgres']['image'] += ?: + @image
+        end
+        out
       end
 
     private

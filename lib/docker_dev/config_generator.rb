@@ -17,8 +17,8 @@ module DockerDev
       @config = BASE
     end
 
-    def add_recipe recipe
-      @config = recipe.new(@config).apply
+    def add_recipe recipe, arg
+      @config = recipe.new(@config, arg).apply
     end
 
     def dump
