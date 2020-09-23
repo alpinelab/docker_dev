@@ -8,6 +8,8 @@ Feature: Default configuration
       services:
         app:
           image: alpinelab/ruby-dev
+          ports:
+            - 5000:5000
           volumes:
             - .:/app
       """
