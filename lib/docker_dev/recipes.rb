@@ -1,4 +1,5 @@
 require 'docker_dev/recipes/postgresql'
+require 'docker_dev/recipes/webpacker'
 
 module DockerDev
   module Recipes
