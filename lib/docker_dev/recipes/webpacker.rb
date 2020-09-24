@@ -9,6 +9,11 @@ module DockerDev
               'WEBPACKER_DEV_SERVER_HOST' => '0.0.0.0'
             }
           }
+        },
+        'volumes' => {
+          'node_modules' => {
+            'driver' => 'local'
+          }
         }
       }
 
@@ -28,6 +33,8 @@ module DockerDev
 
       def apply
         @input['services']['app']['ports'] += %w[3035:3035]
+        @input['services']['app']['volumes'] +=
+          %w[node_modules:/app/node_modules]
         deep_merge @input, CONFIG
       end
 

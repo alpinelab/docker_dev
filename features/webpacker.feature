@@ -13,7 +13,11 @@ Feature: Webpacker service configuration
             - 3035:3035
           volumes:
             - .:/app
+            - node_modules:/app/node_modules
           environment:
             PORT: 3000
             WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+      volumes:
+        node_modules:
+          driver: local
       """
