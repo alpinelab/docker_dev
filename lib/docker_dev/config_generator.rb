@@ -1,5 +1,3 @@
-require 'yaml'
-
 module DockerDev
   class ConfigGenerator
     BASE = {

@@ -1,7 +1,3 @@
-require 'optparse'
-require 'docker_dev/config_generator'
-require 'docker_dev/recipes'
-
 module DockerDev
   class CLI
     ArgumentError = Class.new ArgumentError

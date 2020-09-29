@@ -35,19 +35,7 @@ module DockerDev
         @input['services']['app']['ports'] += %w[3035:3035]
         @input['services']['app']['volumes'] +=
           %w[node_modules:/app/node_modules]
-        deep_merge @input, CONFIG
-      end
-
-    private
-
-      def deep_merge original, other
-        original.merge other do |_, a, b|
-          if Hash === a && Hash === b
-            deep_merge a, b
-          else
-            b
-          end
-        end
+        DockerDev.merge_deep @input, CONFIG
       end
     end
   end

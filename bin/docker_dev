@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'docker_dev/cli'
+require 'docker_dev'
 
 DockerDev::CLI.run ARGV

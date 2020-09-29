@@ -34,23 +34,11 @@ module DockerDev
       end
 
       def apply
-        out = deep_merge @input, CONFIG
+        out = DockerDev.merge_deep @input, CONFIG
         if @image
           out['services']['postgres']['image'] += ?: + @image
         end
         out
-      end
-
-    private
-
-      def deep_merge original, other
-        original.merge other do |_, a, b|
-          if Hash === a && Hash === b
-            deep_merge a, b
-          else
-            b
-          end
-        end
       end
     end
   end
