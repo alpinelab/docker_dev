@@ -4,6 +4,7 @@ require 'yaml'
 require 'docker_dev/cli'
 require 'docker_dev/config_generator'
 require 'docker_dev/recipes'
+require 'docker_dev/recipes/pgadmin'
 require 'docker_dev/recipes/postgresql'
 require 'docker_dev/recipes/webpacker'
 
