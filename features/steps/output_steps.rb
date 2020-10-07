@@ -1,8 +1,8 @@
 usage = <<-eoh
 Usage: docker_dev [options]
     -h, --help                       print this message
-        --webpacker                  use Webpacker
         --postgresql [image tag]     use PostgreSQL
+        --webpacker                  use Webpacker
 eoh
 
 

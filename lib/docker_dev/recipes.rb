@@ -6,6 +6,7 @@ module DockerDev
     class << self
       def each &block
         constants
+          .sort
           .map { |e| const_get e }
           .select { |e| e.is_a? Class }
           .each &block
