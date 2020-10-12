@@ -23,7 +23,7 @@ module DockerDev
 
     def parse_arguments
       parser.parse! @arguments
-    rescue OptionParser::InvalidOption
+    rescue OptionParser::ParseError
       fail ArgumentError, parser
     end
 
