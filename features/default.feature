@@ -12,4 +12,6 @@ Feature: Default configuration
             - 5000:5000
           volumes:
             - .:/app
+            - bundle:/bundle
+            - config:/config
       """

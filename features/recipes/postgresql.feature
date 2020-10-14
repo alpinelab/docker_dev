@@ -12,6 +12,8 @@ Feature: PostgreSQL service configuration
             - 5000:5000
           volumes:
             - .:/app
+            - bundle:/bundle
+            - config:/config
         postgres:
           image: postgres
           volumes:
@@ -35,6 +37,8 @@ Feature: PostgreSQL service configuration
             - 5000:5000
           volumes:
             - .:/app
+            - bundle:/bundle
+            - config:/config
         postgres:
           image: postgres:12-alpine
           volumes:

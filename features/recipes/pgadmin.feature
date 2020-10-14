@@ -12,6 +12,8 @@ Feature: PGAdmin service configuration
             - 5000:5000
           volumes:
             - .:/app
+            - bundle:/bundle
+            - config:/config
         postgres:
           image: postgres
           volumes:

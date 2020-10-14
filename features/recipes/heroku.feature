@@ -14,6 +14,8 @@ Feature: Heroku API key declaration
             - 5000:5000
           volumes:
             - .:/app
+            - bundle:/bundle
+            - config:/config
       """
 
   Scenario: reports error and prints the usage when argument is missing

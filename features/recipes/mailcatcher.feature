@@ -12,6 +12,8 @@ Feature: MailCatcher service configuration
             - 5000:5000
           volumes:
             - .:/app
+            - bundle:/bundle
+            - config:/config
         mailcatcher:
           image: schickling/mailcatcher
           ports:
