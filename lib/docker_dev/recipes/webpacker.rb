@@ -5,7 +5,6 @@ module DockerDev
         'services' => {
           'app' => {
             'environment' => {
-              'PORT' => 3000,
               'WEBPACKER_DEV_SERVER_HOST' => '0.0.0.0'
             }
           }
