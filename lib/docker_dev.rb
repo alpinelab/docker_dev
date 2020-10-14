@@ -7,6 +7,7 @@ require 'docker_dev/recipes'
 require 'docker_dev/recipes/heroku'
 require 'docker_dev/recipes/mailcatcher'
 require 'docker_dev/recipes/pgadmin'
+require 'docker_dev/recipes/port'
 require 'docker_dev/recipes/postgresql'
 require 'docker_dev/recipes/webpacker'
 

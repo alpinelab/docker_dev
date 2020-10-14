@@ -4,6 +4,7 @@ Usage: docker_dev [options]
         --heroku KEY                 set Heroku API key as environment variable
         --mailcatcher                use MailCatcher
         --pgadmin                    use PGAdmin
+        --port NUMBER                change "expose ports", modify environment
         --postgresql [image tag]     use PostgreSQL
         --webpacker                  use Webpacker
 eoh
