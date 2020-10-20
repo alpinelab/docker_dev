@@ -2,7 +2,7 @@ Feature: Port number modification
 
   Scenario: changes "expose ports" and adds `PORT' environment variable
     When I successfully run `docker_dev --port 8000`
-    Then the output must match YAML:
+    Then the content of "docker-compose.yaml" file must match YAML:
       """
       version: '3'
       services:

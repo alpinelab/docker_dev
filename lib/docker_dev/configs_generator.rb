@@ -1,5 +1,5 @@
 module DockerDev
-  class ConfigGenerator
+  class ConfigsGenerator
     BASE = {
       'version' => ?3,
       'services' => {
@@ -16,15 +16,15 @@ module DockerDev
     }
 
     def initialize
-      @config = BASE
+      @configs = { docker_compose: BASE }
     end
 
     def add_recipe recipe, arg
-      @config = recipe.new(@config, arg).apply
+      @configs = recipe.new(@configs, arg).apply
     end
 
-    def dump
-      YAML.dump @config
+    def configs
+      @configs
     end
   end
 end

@@ -18,13 +18,14 @@ module DockerDev
         end
       end
 
-      def initialize input, _
-        @input = input.dup
+      def initialize configs, _
+        @configs = configs.dup
       end
 
       def apply
-        @input.tap do |o|
-          o['services'] = o['services'].merge SERVICE
+        @configs.tap do |o|
+          o[:docker_compose]['services'] =
+            o[:docker_compose]['services'].merge SERVICE
         end
       end
     end

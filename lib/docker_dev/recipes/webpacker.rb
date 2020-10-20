@@ -26,15 +26,17 @@ module DockerDev
         end
       end
 
-      def initialize input, _
-        @input = input.dup
+      def initialize configs, _
+        @configs = configs.dup
       end
 
       def apply
-        @input['services']['app']['ports'] += %w[3035:3035]
-        @input['services']['app']['volumes'] +=
-          %w[node_modules:/app/node_modules]
-        DockerDev.merge_deep @input, CONFIG
+        @configs.tap do |o|
+          o[:docker_compose]['services']['app']['ports'] += %w[3035:3035]
+          o[:docker_compose]['services']['app']['volumes'] +=
+            %w[node_modules:/app/node_modules]
+          o[:docker_compose] = DockerDev.merge_deep o[:docker_compose], CONFIG
+        end
       end
     end
   end

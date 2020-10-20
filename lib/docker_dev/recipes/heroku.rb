@@ -13,14 +13,16 @@ module DockerDev
         end
       end
 
-      def initialize input, key
-        @input = input.dup
+      def initialize configs, key
+        @configs = configs.dup
         @key = key
       end
 
       def apply
-        @input.tap do |o|
-          o['services']['app']['environment'] = { VARIABLE_NAME => @key }
+        @configs.tap do |o|
+          o[:docker_compose]['services']['app']['environment'] = {
+            VARIABLE_NAME => @key
+          }
         end
       end
     end

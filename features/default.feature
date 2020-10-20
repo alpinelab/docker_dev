@@ -1,8 +1,8 @@
 Feature: Default configuration
 
-  Scenario: prints default configuration
+  Scenario: writes default configuration
     When I successfully run `docker_dev`
-    Then the output must match YAML:
+    Then the content of "docker-compose.yaml" file must match YAML:
       """
       version: '3'
       services:

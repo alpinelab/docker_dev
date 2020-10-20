@@ -13,15 +13,17 @@ module DockerDev
         end
       end
 
-      def initialize input, port
-        @input = input.dup
+      def initialize configs, port
+        @configs = configs.dup
         @port = Integer port
       end
 
       def apply
-        @input.tap do |o|
-          o['services']['app']['environment'] = { VARIABLE_NAME => @port }
-          o['services']['app']['ports'] = [([@port] * 2).join(?:)]
+        @configs.tap do |o|
+          o[:docker_compose]['services']['app']['environment'] =
+            { VARIABLE_NAME => @port }
+          o[:docker_compose]['services']['app']['ports'] =
+            [([@port] * 2).join(?:)]
         end
       end
     end

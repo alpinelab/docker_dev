@@ -2,7 +2,7 @@ Feature: Heroku API key declaration
 
   Scenario: sets given Heroku API key as an environment variable
     When I successfully run `docker_dev --heroku heroku_api_key`
-    Then the output must match YAML:
+    Then the content of "docker-compose.yaml" file must match YAML:
       """
       version: '3'
       services:

@@ -18,7 +18,7 @@ module DockerDev
     def initialize arguments, output:
       @arguments = arguments
       @output = output
-      @config_generator = ConfigGenerator.new
+      @configs_generator = ConfigsGenerator.new
     end
 
     def parse_arguments
@@ -28,7 +28,7 @@ module DockerDev
     end
 
     def run
-      @output.print @config_generator.dump
+      ConfigFilesWriter.write @configs_generator.configs
     end
 
   private
@@ -42,7 +42,7 @@ module DockerDev
 
         DockerDev::Recipes.each do |recipe|
           o.on recipe.option, recipe.description do |arg|
-            @config_generator.add_recipe recipe, arg
+            @configs_generator.add_recipe recipe, arg
           end
         end
       end

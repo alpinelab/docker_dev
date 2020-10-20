@@ -34,12 +34,15 @@ module DockerDev
         end
       end
 
-      def initialize input, _
-        @input = input.dup
+      def initialize configs, _
+        @configs = configs.dup
       end
 
       def apply
-        DockerDev.merge_deep @input, CONFIG
+        @configs.tap do |o|
+          o[:docker_compose] =
+            DockerDev.merge_deep o[:docker_compose], CONFIG
+        end
       end
     end
   end

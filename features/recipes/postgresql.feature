@@ -2,7 +2,7 @@ Feature: PostgreSQL service configuration
 
   Scenario: adds PostgreSQL configuration directives
     When I successfully run `docker_dev --postgresql`
-    Then the output must match YAML:
+    Then the content of "docker-compose.yaml" file must match YAML:
       """
       version: '3'
       services:
@@ -27,7 +27,7 @@ Feature: PostgreSQL service configuration
 
   Scenario: forces specific "image" and "tag"
     When I successfully run `docker_dev --postgresql 12-alpine`
-    Then the output must match YAML:
+    Then the content of "docker-compose.yaml" file must match YAML:
       """
       version: '3'
       services:

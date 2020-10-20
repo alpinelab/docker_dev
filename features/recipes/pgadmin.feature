@@ -2,7 +2,7 @@ Feature: PGAdmin service configuration
 
   Scenario: adds PGAdmin configuration directives
     When I successfully run `docker_dev --pgadmin`
-    Then the output must match YAML:
+    Then the content of "docker-compose.yaml" file must match YAML:
       """
       version: '3'
       services:
