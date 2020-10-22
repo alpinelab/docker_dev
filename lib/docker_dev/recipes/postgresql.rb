@@ -20,7 +20,7 @@ module DockerDev
 
       class << self
         def option
-          '--postgresql [image tag]'
+          '--postgresql [IMAGE_TAG]'
         end
 
         def description

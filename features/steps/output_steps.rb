@@ -5,7 +5,7 @@ Usage: docker_dev [options]
         --mailcatcher                use MailCatcher
         --pgadmin                    use PGAdmin
         --port NUMBER                change "expose ports", modify environment
-        --postgresql [image tag]     use PostgreSQL
+        --postgresql [IMAGE_TAG]     use PostgreSQL
         --webpacker                  use Webpacker
 eoh
 
