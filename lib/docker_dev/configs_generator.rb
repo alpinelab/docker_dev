@@ -1,22 +1,32 @@
 module DockerDev
   class ConfigsGenerator
     BASE = {
-      'version' => ?3,
-      'services' => {
-        'app' => {
-          'image' => 'alpinelab/ruby-dev',
-          'ports' => %w[5000:5000],
-          'volumes' => %w[
+      docker_compose: {
+        'version' => ?3,
+        'services' => {
+          'app' => {
+            'image' => 'alpinelab/ruby-dev',
+            'ports' => %w[5000:5000],
+            'volumes' => %w[
             .:/app
             bundle:/bundle
             config:/config
-          ]
+            ]
+          }
+        }
+      },
+      docker_compose_override: {
+        'version' => ?3,
+        'services' => {
+          'app' => {
+            'environment' => nil
+          }
         }
       }
     }
 
     def initialize
-      @configs = { docker_compose: BASE }
+      @configs = BASE
     end
 
     def add_recipe recipe, arg

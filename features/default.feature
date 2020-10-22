@@ -15,3 +15,10 @@ Feature: Default configuration
             - bundle:/bundle
             - config:/config
       """
+    And the content of "docker-compose.override.yaml" file must match YAML:
+      """
+      version: '3'
+      services:
+        app:
+          environment:
+      """
