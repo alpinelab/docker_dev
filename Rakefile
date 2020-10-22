@@ -1,11 +1,8 @@
 require 'cucumber/rake/task'
-require 'rake/testtask'
+require 'rspec/core/rake_task'
 
-task default: %i[features test]
+task default: %i[features spec]
 
 Cucumber::Rake::Task.new :features
 
-Rake::TestTask.new do |t|
-  t.libs << 'test'
-  t.pattern = 'test/**/test_*.rb'
-end
+RSpec::Core::RakeTask.new
