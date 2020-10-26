@@ -4,7 +4,10 @@ module DockerDev
       devcontainer: '.devcontainer/devcontainer.json'.freeze,
       devcontainer_docker_compose: '.devcontainer/docker-compose.yml'.freeze,
       docker_compose: 'docker-compose.yaml'.freeze,
-      docker_compose_override: 'docker-compose.override.yaml'.freeze
+      docker_compose_override: 'docker-compose.override.yaml'.freeze,
+      foreman: '.foreman'.freeze,
+      procfile: 'Procfile'.freeze,
+      procfile_dev: 'Procfile.dev'.freeze
     }.freeze
 
     class << self

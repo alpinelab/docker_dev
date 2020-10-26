@@ -13,6 +13,7 @@ require 'docker_dev/recipes/mailcatcher'
 require 'docker_dev/recipes/pgadmin'
 require 'docker_dev/recipes/port'
 require 'docker_dev/recipes/postgresql'
+require 'docker_dev/recipes/procfile'
 require 'docker_dev/recipes/vscode_remote_config'
 require 'docker_dev/recipes/webpacker'
 
