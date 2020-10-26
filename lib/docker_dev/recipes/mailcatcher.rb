@@ -1,6 +1,6 @@
 module DockerDev
   module Recipes
-    class MailCatcher
+    class MailCatcher < Recipe
       SERVICE = {
         'mailcatcher' => {
           'image' => 'schickling/mailcatcher',
@@ -16,10 +16,6 @@ module DockerDev
         def description
           'use MailCatcher'
         end
-      end
-
-      def initialize configs, _
-        @configs = configs.dup
       end
 
       def apply

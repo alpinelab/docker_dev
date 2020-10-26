@@ -1,6 +1,6 @@
 module DockerDev
   module Recipes
-    class Webpacker
+    class Webpacker < Recipe
       CONFIG = {
         'services' => {
           'app' => {
@@ -24,10 +24,6 @@ module DockerDev
         def description
           'use Webpacker'
         end
-      end
-
-      def initialize configs, _
-        @configs = configs.dup
       end
 
       def apply

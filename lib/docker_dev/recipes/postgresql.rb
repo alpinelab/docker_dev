@@ -1,6 +1,6 @@
 module DockerDev
   module Recipes
-    class PostgreSQL
+    class PostgreSQL < Recipe
       CONFIG = {
         'volumes' => {
           'postgres-data' => {
@@ -28,16 +28,11 @@ module DockerDev
         end
       end
 
-      def initialize configs, image = nil
-        @configs = configs.dup
-        @image = image
-      end
-
       def apply
         @configs.tap do |o|
           o[:docker_compose] = DockerDev.merge_deep o[:docker_compose], CONFIG
-          next unless @image
-          o[:docker_compose]['services']['postgres']['image'] += ?: + @image
+          next unless @arg
+          o[:docker_compose]['services']['postgres']['image'] += ?: + @arg
         end
       end
     end

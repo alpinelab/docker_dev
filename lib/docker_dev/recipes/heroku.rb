@@ -1,6 +1,6 @@
 module DockerDev
   module Recipes
-    class Heroku
+    class Heroku < Recipe
       VARIABLE_NAME = 'HEROKU_API_KEY'.freeze
 
       class << self
@@ -13,15 +13,10 @@ module DockerDev
         end
       end
 
-      def initialize configs, key
-        @configs = configs.dup
-        @key = key
-      end
-
       def apply
         @configs.tap do |o|
           o[:docker_compose]['services']['app']['environment'] = {
-            VARIABLE_NAME => @key
+            VARIABLE_NAME => @arg
           }
         end
       end

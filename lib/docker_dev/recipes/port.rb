@@ -1,11 +1,11 @@
 module DockerDev
   module Recipes
-    class Port
+    class Port < Recipe
       VARIABLE_NAME = 'PORT'.freeze
 
       class << self
         def option
-          '--port NUMBER'
+          ['--port NUMBER', Integer]
         end
 
         def description
@@ -13,17 +13,12 @@ module DockerDev
         end
       end
 
-      def initialize configs, port
-        @configs = configs.dup
-        @port = Integer port
-      end
-
       def apply
         @configs.tap do |o|
           o[:docker_compose]['services']['app']['environment'] =
-            { VARIABLE_NAME => @port }
+            { VARIABLE_NAME => @arg }
           o[:docker_compose]['services']['app']['ports'] =
-            [([@port] * 2).join(?:)]
+            [([@arg] * 2).join(?:)]
         end
       end
     end

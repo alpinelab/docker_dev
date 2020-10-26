@@ -1,6 +1,6 @@
 module DockerDev
   module Recipes
-    class VSCodeRemoteConfig
+    class VSCodeRemoteConfig < Recipe
       DEVCONTAINER_CONFIGURATION = <<~eoh
         {
           "name": "Existing Docker Compose (Extend)",
@@ -45,10 +45,6 @@ module DockerDev
         def description
           'create `.devcontainer\' directory'
         end
-      end
-
-      def initialize configs, _
-        @configs = configs
       end
 
       def apply

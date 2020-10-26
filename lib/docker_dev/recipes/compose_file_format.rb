@@ -1,6 +1,6 @@
 module DockerDev
   module Recipes
-    class ComposeFileFormat
+    class ComposeFileFormat < Recipe
       FILENAME_IDS = %i[
         docker_compose
         docker_compose_override
@@ -16,15 +16,10 @@ module DockerDev
         end
       end
 
-      def initialize configs, compose_file_format
-        @configs = configs
-        @compose_file_format = compose_file_format
-      end
-
       def apply
         @configs.inject({}) do |acc, (filename_id, content)|
           acc.merge filename_id => if FILENAME_IDS.include? filename_id
-            content.merge 'version' => @compose_file_format
+            content.merge 'version' => @arg
           else
             content
           end

@@ -1,6 +1,6 @@
 module DockerDev
   module Recipes
-    class PGAdmin
+    class PGAdmin < Recipe
       CONFIG = {
         'services' => {
           'postgres' => {
@@ -32,10 +32,6 @@ module DockerDev
         def description
           'use PGAdmin'
         end
-      end
-
-      def initialize configs, _
-        @configs = configs.dup
       end
 
       def apply

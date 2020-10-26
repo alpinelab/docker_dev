@@ -41,7 +41,7 @@ module DockerDev
         end
 
         DockerDev::Recipes.each do |recipe|
-          o.on recipe.option, recipe.description do |arg|
+          o.on *recipe.option, recipe.description do |arg|
             @configs_generator.add_recipe recipe, arg
           end
         end
