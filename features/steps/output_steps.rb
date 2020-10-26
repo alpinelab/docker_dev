@@ -7,6 +7,7 @@ Usage: docker_dev [options]
         --pgadmin                    use PGAdmin
         --port NUMBER                change "expose ports", modify environment
         --postgresql [IMAGE_TAG]     use PostgreSQL
+        --vscode-remote-config       create `.devcontainer' directory
         --webpacker                  use Webpacker
 eoh
 
