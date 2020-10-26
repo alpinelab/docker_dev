@@ -1,6 +1,7 @@
 usage = <<-eoh
 Usage: docker_dev [options]
     -h, --help                       print this message
+        --compose-file-format FORMAT change docker compose file format
         --heroku KEY                 set Heroku API key as environment variable
         --mailcatcher                use MailCatcher
         --pgadmin                    use PGAdmin
