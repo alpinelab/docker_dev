@@ -2,7 +2,7 @@ module DockerDev
   class ConfigFilesWriter
     CONFIG_FILENAMES = {
       docker_compose: 'docker-compose.yaml'.freeze,
-      docker_compose_override: 'docker-compose.override.yaml'
+      docker_compose_override: 'docker-compose.override.yaml'.freeze
     }.freeze
 
     class << self
