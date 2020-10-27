@@ -2,6 +2,7 @@ Gem::Specification.new do |s|
   s.name = 'docker_dev'
   s.version = '1.0.0'
   s.summary = 'Config generator for alpinelab/ruby-dev Docker image'
+  s.license = 'MIT'
 
   s.authors = 'AlpineLab'
 
