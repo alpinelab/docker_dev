@@ -7,8 +7,8 @@ Usage: docker_dev [options]
         --pgadmin                    use PGAdmin
         --port NUMBER                change "expose ports", modify environment
         --postgresql [IMAGE_TAG]     use PostgreSQL
-        --procfile                   creates files for foreman
-        --ruby IMAGE_TAG             changes the tag of `app' service image
+        --procfile                   create files for foreman
+        --ruby IMAGE_TAG             change the tag of `app' service image
         --vscode-remote-config       create `.devcontainer' directory
         --webpacker                  use Webpacker
 eoh

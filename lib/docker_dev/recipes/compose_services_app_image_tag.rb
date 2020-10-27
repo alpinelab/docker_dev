@@ -7,7 +7,7 @@ module DockerDev
         end
 
         def description
-          'changes the tag of `app\' service image'
+          'change the tag of `app\' service image'
         end
       end
 

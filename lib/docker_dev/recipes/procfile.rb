@@ -10,7 +10,7 @@ module DockerDev
         end
 
         def description
-          'creates files for foreman'
+          'create files for foreman'
         end
       end
 
