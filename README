@@ -1,0 +1,29 @@
+docker_dev
+==========
+
+  Config generator for alpinelab/ruby-dev Docker image.
+
+
+Installation
+------------
+
+* Install RubyGems;
+* Build the gem, execute `gem build docker_dev.gemspec';
+* Install the gem, execute `gem install ${GEM_FILENAME}'.
+
+
+Usage
+-----
+
+Usage: docker_dev [options]
+    -h, --help                       print this message
+        --compose-file-format FORMAT change docker compose file format
+        --heroku KEY                 set Heroku API key as environment variable
+        --mailcatcher                use MailCatcher
+        --pgadmin                    use PGAdmin
+        --port NUMBER                change "expose ports", modify environment
+        --postgresql [IMAGE_TAG]     use PostgreSQL
+        --procfile                   create files for foreman
+        --ruby IMAGE_TAG             change the tag of `app' service image
+        --vscode-remote-config       create `.devcontainer' directory
+        --webpacker                  use Webpacker
