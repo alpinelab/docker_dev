@@ -25,16 +25,14 @@ module DockerDev
       }
     }
 
+    attr_reader :configs
+
     def initialize
       @configs = BASE
     end
 
     def add_recipe recipe, arg
       @configs = recipe.new(@configs, arg).apply
-    end
-
-    def configs
-      @configs
     end
   end
 end
