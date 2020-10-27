@@ -1,0 +1,20 @@
+ignore:
+  - '**/*':
+    - Layout/AccessModifierIndentation
+    - Layout/ElseAlignment
+    - Layout/EmptyLineBetweenDefs
+    - Layout/EmptyLines
+    - Layout/EndAlignment
+    - Layout/HeredocIndentation
+    - Layout/IndentationWidth
+    - Layout/SpaceInsideHashLiteralBraces
+    - Lint/AmbiguousOperator
+    - Lint/AmbiguousOperator
+    - Naming/HeredocDelimiterCase
+    - Security/YAMLLoad
+    - Standard/SemanticBlocks
+    - Style/CharacterLiteral
+    - Style/NestedParenthesizedCalls
+    - Style/SingleLineMethods
+    - Style/StderrPuts
+    - Style/StringLiterals
