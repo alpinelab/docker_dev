@@ -8,9 +8,9 @@ module DockerDev
             'image' => 'alpinelab/ruby-dev',
             'ports' => %w[5000:5000],
             'volumes' => %w[
-            .:/app
-            bundle:/bundle
-            config:/config
+              .:/app
+              bundle:/bundle
+              config:/config
             ]
           }
         }
